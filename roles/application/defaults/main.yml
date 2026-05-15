@@ -1,0 +1,8 @@
+---
+# Defaults para a role application
+
+app_repo: ""
+app_version: "main"
+app_port: 8080
+app_framework: "generic"
+app_environment: "production"

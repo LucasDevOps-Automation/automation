@@ -1,0 +1,30 @@
+---
+# Defaults para a role common
+
+# Pacotes padrão
+common_packages:
+  - curl
+  - wget
+  - git
+  - vim
+  - htop
+  - net-tools
+  - unzip
+  - apt-transport-https
+  - ca-certificates
+  - gnupg
+  - lsb-release
+
+# Timezone padrão
+timezone: "UTC"
+
+# Usuário e grupo da aplicação
+app_user: "appuser"
+app_group: "appgroup"
+app_home: "/opt/app"
+
+# SSH
+ssh_public_keys: []
+
+# Sistema
+enable_firewall: false

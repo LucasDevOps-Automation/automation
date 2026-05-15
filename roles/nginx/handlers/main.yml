@@ -1,0 +1,18 @@
+---
+# Handlers para a role nginx
+
+- name: Restart nginx
+  service:
+    name: nginx
+    state: restarted
+  become: yes
+
+- name: Reload nginx
+  service:
+    name: nginx
+    state: reloaded
+  become: yes
+
+- name: Test nginx
+  command: nginx -t
+  become: yes

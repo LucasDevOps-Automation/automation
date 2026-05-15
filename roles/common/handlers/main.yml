@@ -1,0 +1,20 @@
+---
+# Handlers para a role common
+
+- name: Restart ssh
+  service:
+    name: ssh
+    state: restarted
+  become: yes
+
+- name: Reload firewall
+  ufw:
+    state: reloaded
+  become: yes
+  when: ansible_os_family == "Debian"
+
+- name: Restart networking
+  service:
+    name: networking
+    state: restarted
+  become: yes

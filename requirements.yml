@@ -1,0 +1,7 @@
+---
+# Adicione dependências conforme necessário
+# collections:
+#   - name: community.general
+# 
+# roles:
+#   - name: geerlingguy.nginx

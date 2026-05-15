@@ -1,0 +1,55 @@
+---
+# Role Application - Tarefas
+
+- name: Criar diretório da aplicação
+  file:
+    path: "{{ app_home }}"
+    state: directory
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+    mode: '0755'
+  become: yes
+
+- name: Clonar repositório da aplicação (se configurado)
+  git:
+    repo: "{{ app_repo | default(omit) }}"
+    dest: "{{ app_home }}"
+    version: "{{ app_version | default('main') }}"
+  become: yes
+  become_user: "{{ app_user }}"
+  when: app_repo is defined
+  ignore_errors: yes
+
+- name: Criar arquivo de configuração da aplicação
+  template:
+    src: app-config.j2
+    dest: "{{ app_home }}/config.yml"
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+    mode: '0640'
+  become: yes
+  notify: Restart application
+
+- name: Instalar dependências da aplicação
+  pip:
+    requirements: "{{ app_home }}/requirements.txt"
+    executable: pip3
+  become: yes
+  when: app_framework | default("generic") == "python"
+  ignore_errors: yes
+
+- name: Criar serviço systemd para aplicação
+  template:
+    src: app-systemd.service.j2
+    dest: "/etc/systemd/system/{{ project_name }}.service"
+    mode: '0644'
+  become: yes
+  notify: Daemon reload
+
+- name: Iniciar aplicação
+  service:
+    name: "{{ project_name }}"
+    state: started
+    enabled: yes
+    daemon_reload: yes
+  become: yes

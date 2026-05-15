@@ -1,0 +1,13 @@
+---
+# Defaults para a role nginx
+
+nginx_version: "latest"
+nginx_user: "www-data"
+nginx_worker_processes: "auto"
+nginx_worker_connections: 1024
+nginx_keepalive_timeout: 65
+
+http_port: 80
+https_port: 443
+ssl_enabled: false
+ssl_certificate_path: "/etc/ssl/certs"

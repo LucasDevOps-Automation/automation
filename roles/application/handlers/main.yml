@@ -1,0 +1,13 @@
+---
+# Handlers para a role application
+
+- name: Restart application
+  service:
+    name: "{{ project_name }}"
+    state: restarted
+  become: yes
+
+- name: Daemon reload
+  systemd:
+    daemon_reload: yes
+  become: yes
