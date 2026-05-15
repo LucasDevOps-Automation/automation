@@ -1,0 +1,14 @@
+{
+  "socketPath": "\\\\.\\pipe\\mcp-3de72b9d-7563-4bef-8d0f-d10fe23b31d6.sock",
+  "scheme": "pipe",
+  "headers": {
+    "Authorization": "Nonce 17c2f565-6737-4a4a-9bb2-deb6573e37cd"
+  },
+  "pid": 6304,
+  "ideName": "Visual Studio Code",
+  "timestamp": 1778811520640,
+  "workspaceFolders": [
+    "c:\\Users\\Pichau\\Downloads\\automation-main\\automation-main"
+  ],
+  "isTrusted": true
+}
