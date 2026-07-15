@@ -1,7 +1,0 @@
----
-- hosts: servers
-  gather_facts: yes
-  
-  tasks:
-    - name: Ping
-      ping:

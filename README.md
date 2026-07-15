@@ -1,35 +1,28 @@
-# Ansible - Projeto Simples
+# Projeto Python para Automacao, IA e DevOps
 
-Estrutura minimalista de projeto Ansible para começar rapidinho.
+Estrutura inicial para um projeto em Python com foco em automacao, inteligencia artificial e boas praticas DevOps.
 
-## 📁 Estrutura
+## Estrutura
 
-```
+```text
 .
-├── ansible.cfg          # Configuração Ansible
-├── inventory.ini        # Seus servidores
-├── playbook.yml         # Playbook principal
-├── requirements.yml     # Dependências (opcional)
-├── roles/               # Suas roles
-├── templates/           # Templates Jinja2
-├── library/             # Módulos customizados
-└── tests/               # Testes
+├─ app/
+│  ├─ api/
+│  ├─ core/
+│  ├─ models/
+│  ├─ services/
+│  └─ utils/
+├─ docs/
+├─ scripts/
+├─ tests/
+└─ .github/
+   └─ workflows/
 ```
 
-## 🚀 Quick Start
+## Proximos passos
 
-```bash
-# Edite inventory.ini com seus servidores
-# Edite playbook.yml com suas tarefas
-# Execute:
-ansible-playbook playbook.yml
-```
-
-## 📝 Próximos Passos
-
-1. Configure seus servidores em `inventory.ini`
-2. Crie roles em `roles/`
-3. Use templates em `templates/`
-4. Adicione testes em `tests/`
-
-Vá expandindo conforme necessário! 🚀
+1. Definir o problema que o projeto vai resolver.
+2. Criar o ambiente virtual do Python.
+3. Implementar a primeira funcionalidade em `app/`.
+4. Adicionar testes em `tests/`.
+5. Configurar CI em `.github/workflows/`.
